@@ -1,0 +1,9 @@
+#set($id = $ctx.stash.postId)
+
+#if($id == 1)
+    $util.unauthorized()
+#end
+
+{
+    "payload": {"id": $util.toJson($util.autoId()), "content": $util.toJson("Wojtek ma kota")}
+}

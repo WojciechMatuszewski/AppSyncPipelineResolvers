@@ -1,0 +1,47 @@
+{
+  "name": "cdk-boilerplate",
+  "version": "0.1.0",
+  "bin": {
+    "cdk-boilerplate": "bin/cdk-boilerplate.js"
+  },
+  "scripts": {
+    "dev": "tsc -w",
+    "build:cdk": "node build.js -t cdk",
+    "build:functions": "node build.js -t functions",
+    "build": "npm run clean && npm run build:cdk && npm run build:functions",
+    "test": "is-ci \"test:ci\" \"test:watch\"",
+    "test:watch": "jest --watch",
+    "test:ci": "jest --runInBand --detectOpenHandles",
+    "clean": "rm -rf dist cdk.out",
+    "synth": "npm run build && cdk synth",
+    "deploy": "npm run synth && cdk deploy",
+    "bootstrap": "npm run synth && cdk bootstrap"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "1.75.0",
+    "@aws-cdk/aws-apigatewayv2": "1.75.0",
+    "@aws-cdk/aws-appsync": "1.75.0",
+    "@aws-cdk/aws-lambda": "1.75.0",
+    "@aws-cdk/core": "1.75.0",
+    "@types/app-root-path": "1.2.4",
+    "@types/aws-lambda": "8.10.64",
+    "@types/jest": "26.0.15",
+    "@types/node": "10.17.27",
+    "app-root-path": "3.0.0",
+    "aws-cdk": "1.75.0",
+    "chalk": "4.1.0",
+    "esbuild": "0.8.11",
+    "fast-glob": "3.2.4",
+    "is-ci": "2.0.0",
+    "is-ci-cli": "2.1.2",
+    "jest": "26.4.2",
+    "source-map-support": "0.5.19",
+    "ts-jest": "26.4.0",
+    "ts-node": "9.0.0",
+    "typescript": "4.0.5",
+    "yargs": "16.0.3"
+  },
+  "dependencies": {
+    "aws-sdk": "2.799.0"
+  }
+}

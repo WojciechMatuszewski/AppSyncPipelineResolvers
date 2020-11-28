@@ -1,0 +1,9 @@
+type Query {
+  lambdaPipelinePost(id: ID!): Post!
+  vtlPipelinePost(id: ID!): Post!
+}
+
+type Post {
+  id: ID!
+  content: String!
+}

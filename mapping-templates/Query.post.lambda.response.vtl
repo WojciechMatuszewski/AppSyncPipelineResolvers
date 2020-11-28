@@ -1,0 +1,9 @@
+## For some reason, the error thrown inside the lambda, is not automatically converted to a GraphQL error.
+## We have to perform the condition manually here.
+
+#if ($ctx.error)
+    $util.error($ctx.error.message)
+#end
+
+$util.toJson($ctx.result)
+
